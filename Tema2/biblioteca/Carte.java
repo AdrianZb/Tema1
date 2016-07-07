@@ -58,4 +58,20 @@ public class Carte {
                 ", numarPagini=" + numarPagini +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Carte carte = (Carte) o;
+
+        if (numarPagini != carte.numarPagini) return false;
+        if (autor != null ? !autor.equals(carte.autor) : carte.autor != null) return false;
+        if (editura != null ? !editura.equals(carte.editura) : carte.editura != null) return false;
+        if (titlu != null ? !titlu.equals(carte.titlu) : carte.titlu != null) return false;
+
+        return true;
+    }
+
 }

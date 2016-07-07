@@ -28,7 +28,12 @@ public class Test {
 
             System.out.println(carte);
 
-            comparaGrosimeDouaCarti(carte, carte2);
+            if(!verificaDuplicat(carte, carte2)){
+                comparaGrosimeDouaCarti(carte, carte2);
+            }else{
+                System.out.println("Cartile sunt duplicate!!!");
+            }
+
 
 
     }
@@ -47,7 +52,10 @@ public class Test {
         } else {
             System.out.println(Keys.CARTEA + c2 + Keys.MAI_GROASA);
         }
+    }
 
+    private static boolean verificaDuplicat(Carte c1, Carte c2){
+        return c1.equals(c2);
     }
 
 }
