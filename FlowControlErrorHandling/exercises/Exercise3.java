@@ -20,7 +20,7 @@ public class Exercise3 {
             return true;
         } else if (a > 0 && b < 0) {
             return true;
-        } else if (negative == true && a < 0 && b < 0) {
+        } else if (negative && a < 0 && b < 0) {
             return true;
         }
         return false;

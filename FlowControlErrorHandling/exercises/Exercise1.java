@@ -13,9 +13,9 @@ public class Exercise1 {
 
 
     public static boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-        if (aSmile == true && bSmile == true) {
+        if (aSmile && bSmile) {
             return true;
-        } else if (aSmile == false && bSmile == false) {
+        } else if (!aSmile && !bSmile) {
             return true;
         }
         return false;
