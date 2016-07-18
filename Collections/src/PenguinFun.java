@@ -37,9 +37,10 @@ public class PenguinFun {
 
 
         //optional exercise
-        Map<Integer, Penguin> mapPenguin = new HashMap<Integer, Penguin>();
-        populateMapWithManyPenguins(mapPenguin);
-        getRandomElementFromHugeMap(mapPenguin);
+        Map<Penguin, Integer> mapPenguin = new HashMap<Penguin, Integer>();
+        Penguin penguin = populateMapWithManyPenguins(mapPenguin);
+        getRandomElementFromHugeMap(mapPenguin, penguin);
+        //if we change the result of the hashCode to return the same result always, the program takes much longer to complete
 
     }
 
@@ -146,16 +147,19 @@ public class PenguinFun {
         System.out.println("===================================================================");
     }
 
-    public static void populateMapWithManyPenguins(Map<Integer, Penguin> penguinMap) {
+    public static Penguin populateMapWithManyPenguins(Map<Penguin, Integer> penguinMap) {
         PenguinHatchery penguinHatchery = new PenguinHatchery();
+        Penguin penguin = null;
         for (int i = 0; i < 120000; i++) {
-            penguinMap.put(i, penguinHatchery.hatchPenguin());
+            penguin = penguinHatchery.hatchPenguin();
+            penguinMap.put(penguin , 1);
         }
+        return penguin;
     }
 
-    public static void getRandomElementFromHugeMap(Map<Integer, Penguin> penguinMap){
+    public static void getRandomElementFromHugeMap(Map<Penguin, Integer> penguinMap, Penguin penguin){
         Long curent = System.nanoTime();
-        Penguin p = penguinMap.get(2);
+        Integer p = penguinMap.get(penguin);
         Long after = System.nanoTime();
         System.out.println("Initial time: " + curent);
         System.out.println("After time: " + after);
