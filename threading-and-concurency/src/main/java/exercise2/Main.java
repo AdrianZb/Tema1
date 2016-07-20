@@ -36,7 +36,7 @@ public class Main {
 
     public static void writeToFile(String fileName) {
         try (FileWriter fileWriter = new FileWriter(fileName)) {
-            fileWriter.write("mere pere portocale banane mere struguri kiwi ananas pere mere pere banane");
+            fileWriter.write("mere pere portocale banane mere struguri kiwi ananas pere mere pere banane mere");
         } catch (FileNotFoundException fe) {
             fe.printStackTrace();
         } catch (IOException ie) {
@@ -77,7 +77,9 @@ public class Main {
         }
 
         for (Map.Entry entry : mapa.entrySet()) {
-            System.out.println("Cuvantul " + entry.getKey() + " - > procent: " + (int) entry.getValue()*100 / words.length + "%");
+            double value = (int) entry.getValue()*100.0 / words.length;
+            String stringValue = String.format("%.2f", value);
+            System.out.println("Cuvantul " + entry.getKey() + " - > procent: " + stringValue + "%");
         }
     }
 
