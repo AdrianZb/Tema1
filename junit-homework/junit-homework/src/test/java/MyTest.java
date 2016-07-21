@@ -31,7 +31,7 @@ public class MyTest {
         splitPattern = new SplitPattern();
         System.out.println("You are in testMyStringLength");
         String result = splitPattern.getStringLength("Tetrahidrocanabinol");
-        Assert.assertNotNull(result);
+        Assert.assertEquals(result , "long");
     }
 
     @Test
@@ -39,11 +39,19 @@ public class MyTest {
         splitPattern = new SplitPattern();
         System.out.println("You are in testMyStringLength");
         String result = splitPattern.getStringLength("mar");
-        Assert.assertNotNull(result);
+        Assert.assertEquals(result , "small");
     }
 
     @Test
     public void testMyStringLength3() throws Exception {
+        splitPattern = new SplitPattern();
+        System.out.println("You are in testMyStringLength");
+        String result = splitPattern.getStringLength("acadeaMoca");
+        Assert.assertEquals(result , "medium");
+    }
+
+    @Test
+    public void testMyStringLength4() throws Exception {
         splitPattern = new SplitPattern();
         System.out.println("You are in testMyStringLength");
         String result = splitPattern.getStringLength(null);
@@ -51,7 +59,7 @@ public class MyTest {
     }
 
     @Test
-    public void testMyStringLength4() throws Exception {
+    public void testMyStringLength5() throws Exception {
         splitPattern = new SplitPattern();
         System.out.println("You are in testMyStringLength");
         String result = splitPattern.getStringLength("acadeaMoca");
@@ -75,7 +83,7 @@ public class MyTest {
         processPattern = new ProcessPattern();
         System.out.println("You are in my testGeneratePosition");
         String result = processPattern.generatePosition("junior", 1);
-        Assert.assertNotNull(result);
+        Assert.assertEquals("Junior Developer" ,result);
     }
 
     @Test
@@ -83,14 +91,14 @@ public class MyTest {
         processPattern = new ProcessPattern();
         System.out.println("You are in my testGeneratePosition");
         String result = processPattern.generatePosition("middle", 1);
-        Assert.assertNotNull(result);
+        Assert.assertEquals("Developer 1" ,result);
     }
     @Test
     public void testGeneratePosition3() throws Exception {
         processPattern = new ProcessPattern();
         System.out.println("You are in my testGeneratePosition");
         String result = processPattern.generatePosition("middle", 3);
-        Assert.assertNotNull(result);
+        Assert.assertEquals("Developer 2" ,result);
     }
 
     @Test
@@ -98,14 +106,14 @@ public class MyTest {
         processPattern = new ProcessPattern();
         System.out.println("You are in my testGeneratePosition");
         String result = processPattern.generatePosition("senior", 4);
-        Assert.assertNotNull(result);
+        Assert.assertEquals("Senior 1" ,result);
     }
     @Test
     public void testGeneratePosition5() throws Exception {
         processPattern = new ProcessPattern();
         System.out.println("You are in my testGeneratePosition");
         String result = processPattern.generatePosition("senior", 12);
-        Assert.assertNotNull(result);
+        Assert.assertEquals("Senior 2" ,result);
     }
 
 
