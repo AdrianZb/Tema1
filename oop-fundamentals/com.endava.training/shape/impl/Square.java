@@ -7,16 +7,16 @@ import shape.Shape2D;
  */
 public class Square implements Shape2D{
 
-    private int x;
-    private int y;
+    private int latura;
+
 
     @Override
-    public void computeArea() {
-
+    public double computeArea() {
+         return latura * latura;
     }
 
     @Override
-    public void computePerimeter() {
-
+    public double computePerimeter() {
+        return  latura * 4;
     }
 }

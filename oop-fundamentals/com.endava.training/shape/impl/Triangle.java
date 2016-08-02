@@ -7,16 +7,18 @@ import shape.Shape2D;
  */
 public class Triangle implements Shape2D {
 
-    private int x;
-    private int y;
+    private int l1;
+    private int l2;
+    private int l3;
+    private int inaltime;
 
     @Override
-    public void computeArea() {
-
+    public double computeArea() {
+        return (inaltime * (l1 + l2)) / 2;
     }
 
     @Override
-    public void computePerimeter() {
-
+    public double computePerimeter() {
+        return l1 + l2 + l3;
     }
 }

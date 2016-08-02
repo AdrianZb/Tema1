@@ -5,8 +5,8 @@ package shape;
  */
 public interface Shape2D {
 
-    public void computeArea();
+     double computeArea();
 
-    public void computePerimeter();
+     double computePerimeter();
 
 }

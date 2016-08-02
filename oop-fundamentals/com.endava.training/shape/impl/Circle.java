@@ -1,23 +1,21 @@
 package shape.impl;
 
 import shape.Shape2D;
-
+import static java.lang.Math.PI;
 /**
  * Created by azburatura on 7/8/2016.
  */
 public class Circle implements Shape2D {
 
-    private static final double PI = Math.PI;
-    private int x;
-    private int y;
+    private int r;
 
     @Override
-    public void computeArea() {
-
+    public double computeArea() {
+        return PI * r * r;
     }
 
     @Override
-    public void computePerimeter() {
-
+    public double computePerimeter() {
+        return PI * 2 * r;
     }
 }
